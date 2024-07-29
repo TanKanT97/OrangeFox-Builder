@@ -1,4 +1,4 @@
-name: OrangeFox - Build
+name: OrangeFox - Builder for AUSTIN
 
 # Credits to:
 # https://github.com/TeamWin
@@ -20,11 +20,11 @@ on:
       DEVICE_TREE:
         description: 'OrangeFox Device Tree'
         required: true
-        default: 'https://github.com/TanKanT97/twrp_amazon_austin'
+        default: 'https://github.com/TanKanT97/device_amazon_austin'
       DEVICE_TREE_BRANCH:
         description: 'OrangeFox Device Tree Branch'
         required: true
-        default: 'twrp-9.0'
+        default: 'cm-14.1'
       DEVICE_PATH:
         description: 'Specify your Device Path'
         required: true
@@ -103,7 +103,7 @@ jobs:
         source build/envsetup.sh
         export ALLOW_MISSING_DEPENDENCIES=true
         set -e
-        lunch omni_${{ github.event.inputs.DEVICE_NAME }}-eng && make clean && mka adbd ${{ github.event.inputs.BUILD_TARGET }}image
+        lunch lineage_${{ github.event.inputs.DEVICE_NAME }}-userdebug && make clean && mka adbd ${{ github.event.inputs.BUILD_TARGET }}image
 
     - name: Set Release Properties
       run: |
