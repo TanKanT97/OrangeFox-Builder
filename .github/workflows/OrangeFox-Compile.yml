@@ -20,11 +20,11 @@ on:
       DEVICE_TREE:
         description: 'OrangeFox Device Tree'
         required: true
-        default: 'https://github.com/TanKanT97/device_amazon_austin'
+        default: 'https://github.com/TanKanT97/custom-austin_los'
       DEVICE_TREE_BRANCH:
         description: 'OrangeFox Device Tree Branch'
         required: true
-        default: 'cm-12.1'
+        default: 'main'
       DEVICE_PATH:
         description: 'Specify your Device Path'
         required: true
